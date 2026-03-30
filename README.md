@@ -7,6 +7,8 @@ One file. Every network site. One script tag.
 
 ## Include on any network site
 
+If you would like to add the Wee Fowk Network's Ecosystem Bar on your website...
+
 Add this as the last line before `</body>`:
 
 ```html
