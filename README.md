@@ -10,7 +10,7 @@ One file. Every network site. One script tag.
 Add this as the last line before `</body>`:
 
 ```html
-<script src="YOUR_CDN_URL"></script>
+<script src="https://dfiueufymejikowcevex.supabase.co/storage/v1/object/public/cdn/ecosystem-bar.min.js"></script>
 ```
 
 ## To add a new site
