@@ -3,32 +3,32 @@
   // ============================================================
   // CONFIGURATION
   // ============================================================
-  var SUPABASE_URL     = 'https://dfiueufymejikowcevex.supabase.co';
+  var SUPABASE_URL      = 'https://dfiueufymejikowcevex.supabase.co';
   var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRmaXVldWZ5bWVqaWtvd2NldmV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ4MjgyMjQsImV4cCI6MjA5MDQwNDIyNH0.66M11sx54ZZKou8lv0nYOIkfkP0C4cd8_PyPp6ej78A';
 
   var TAGLINE_FULL   = 'Two Votes, One Voice, for Independence';
   var TAGLINE_MOBILE = 'Two Votes, One Voice';
 
+  // ── Dropdown order: VoteWiser first, WeeFowk second, Organising third ──
   var NETWORK_SITES = [
-    { name: 'Wee Fowk',   url: 'https://weefowk.org',              description: 'The Network',           icon: '\u2B21' },
-    { name: 'Organising', url: 'https://organisingforscotland.com', description: 'Organising Engine',     icon: '\uD83C\uDF3F', comingSoon: true },
-    { name: 'VoteWiser',  url: 'https://votewiser.scot',            description: 'Electoral Intelligence', icon: '\uD83D\uDDF3' }
+    { name: 'VoteWiser',  url: 'https://votewiser.scot',            description: 'Electoral Intelligence', icon: '\uD83D\uDDF3' },
+    { name: 'Wee Fowk',   url: 'https://weefowk.org',              description: 'The Network',            icon: '\u2B21' },
+    { name: 'Organising', url: 'https://organisingforscotland.com', description: 'Organising Engine',      icon: '\uD83C\uDF3F', comingSoon: true }
   ];
 
   // ============================================================
   // COLOURS
   // ============================================================
-  var BLUE       = '#003F8A';
-  var BLUE_DARK  = '#002D65';
-  var WHITE      = '#FFFFFF';
-  var WHITE_55   = 'rgba(255,255,255,0.55)';
-  var WHITE_08   = 'rgba(255,255,255,0.08)';
-  var WHITE_15   = 'rgba(255,255,255,0.15)';
-  var GOLD       = '#F0C040';
-  var GOLD_20    = 'rgba(240,192,64,0.2)';
-  var RED_SOFT   = '#FF6B6B';
+  var BLUE      = '#003F8A';
+  var BLUE_DARK = '#002D65';
+  var WHITE     = '#FFFFFF';
+  var WHITE_55  = 'rgba(255,255,255,0.55)';
+  var WHITE_08  = 'rgba(255,255,255,0.08)';
+  var WHITE_15  = 'rgba(255,255,255,0.15)';
+  var GOLD      = '#F0C040';
+  var GOLD_20   = 'rgba(240,192,64,0.2)';
+  var RED_SOFT  = '#FF6B6B';
 
-  // Notification strip pastel palettes
   var STRIP_PALETTES = {
     info:    { bg:'#DBEAFE', text:'#1E3A6E', border:'#BFDBFE', dot:'#3B82F6' },
     success: { bg:'#DCFCE7', text:'#14532D', border:'#BBF7D0', dot:'#22C55E' },
@@ -44,32 +44,21 @@
   // CSS
   // ============================================================
   var css = [
-    // Bar
     '#wfbar{position:fixed;top:0;left:0;right:0;height:'+BAR_HEIGHT+'px;background:'+BLUE+';display:flex;align-items:center;justify-content:space-between;padding:0 20px;z-index:99998;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px;box-sizing:border-box;border-bottom:1px solid '+BLUE_DARK+';box-shadow:0 2px 16px rgba(0,0,0,.3)}',
     '#wfbar *{box-sizing:border-box;margin:0;padding:0}',
-
-    // Left
     '#wfbar-left{display:flex;align-items:center;height:100%;gap:0;flex-shrink:0;min-width:0}',
-
-    // Logo
     '#wfbar-logo-wrap{display:flex;align-items:center;gap:9px;padding-right:18px;border-right:1px solid '+WHITE_15+';height:100%;flex-shrink:0}',
     '#wfbar-hex{color:'+GOLD+';font-size:17px;line-height:1;flex-shrink:0}',
     '#wfbar-logo{color:'+WHITE+';font-weight:700;font-size:13px;text-decoration:none;letter-spacing:.3px;white-space:nowrap}',
     '#wfbar-logo:hover{color:'+GOLD+'}',
-
-    // Tagline
     '#wfbar-tag-wrap{display:flex;align-items:center;padding:0 18px;border-right:1px solid '+WHITE_15+';height:100%;flex-shrink:0}',
     '#wfbar-tag{color:'+WHITE_55+';font-size:10px;letter-spacing:1.8px;white-space:nowrap;text-transform:uppercase;font-weight:500}',
     '#wfbar-tag-full{display:inline}',
     '#wfbar-tag-mobile{display:none}',
-
-    // Network btn
     '#wfbar-net{position:relative;height:100%;display:flex;align-items:center;padding:0 4px 0 12px;flex-shrink:0}',
     '#wfbar-net-btn{background:none;border:none;cursor:pointer;color:'+WHITE_55+';font-size:12px;font-family:inherit;display:flex;align-items:center;gap:7px;padding:6px 10px;border-radius:5px;transition:color .15s,background .15s;white-space:nowrap;letter-spacing:.2px;line-height:1}',
     '#wfbar-net-btn:hover{color:'+WHITE+';background:'+WHITE_08+'}',
     '#wfbar-net-btn[aria-expanded="true"]{color:'+GOLD+';background:'+GOLD_20+'}',
-
-    // Dropdown
     '#wfbar-dd{position:absolute;top:calc(100% + 4px);left:0;background:'+BLUE_DARK+';border:1px solid '+WHITE_15+';border-radius:8px;min-width:240px;padding:6px;z-index:99999;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .15s,transform .15s,visibility .15s;pointer-events:none}',
     '#wfbar-dd.wf-open{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}',
     '#wfbar-dd-hdr{padding:8px 12px 10px;border-bottom:1px solid '+WHITE_15+';margin-bottom:6px}',
@@ -87,38 +76,24 @@
     '.wfdd-row.wf-soon .wfdd-name{color:rgba(255,255,255,.3)}',
     '.wfdd-desc{font-size:11px;color:rgba(255,255,255,.4)}',
     '.wfdd-soon-tag{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:'+GOLD+';opacity:.6;margin-left:auto;padding:2px 6px;border:1px solid rgba(240,192,64,.25);border-radius:3px;flex-shrink:0}',
-
-    // Right
     '#wfbar-right{display:flex;align-items:center;gap:8px;flex-shrink:0}',
-
-    // Bell
     '#wfbar-bell{position:relative;background:none;border:none;cursor:pointer;color:'+WHITE_55+';padding:6px;border-radius:5px;display:flex;align-items:center;justify-content:center;transition:color .15s,background .15s;line-height:1}',
     '#wfbar-bell:hover{color:'+WHITE+';background:'+WHITE_08+'}',
     '#wfbar-bell-badge{position:absolute;top:5px;right:5px;width:7px;height:7px;border-radius:50%;background:'+RED_SOFT+';border:1.5px solid '+BLUE+';display:none}',
     '#wfbar-bell-badge.wf-show{display:block}',
-
-    // User
     '#wfbar-user{color:'+WHITE_55+';font-size:12px;white-space:nowrap;letter-spacing:.2px}',
     '#wfbar-user span{color:'+GOLD+';font-weight:600}',
-
-    // Buttons
     '.wfbtn{background:rgba(255,255,255,.1);border:1px solid '+WHITE_15+';color:'+WHITE+';padding:5px 14px;border-radius:5px;cursor:pointer;font-size:12px;text-decoration:none;white-space:nowrap;transition:all .15s;font-family:inherit;font-weight:500;letter-spacing:.3px;line-height:1;display:inline-flex;align-items:center}',
     '.wfbtn:hover{background:'+WHITE+';color:'+BLUE+'}',
-    '.wfbtn-join{background:'+GOLD+';border:1px solid '+GOLD+';color:'+BLUE_DARK+';font-weight:700}',
-    '.wfbtn-join:hover{background:#FFD060;border-color:#FFD060;color:'+BLUE_DARK+'}',
-
-    // ── NOTIFICATION STRIP (below bar) ──
+    '.wfbtn-gold{background:'+GOLD+';border:1px solid '+GOLD+';color:'+BLUE_DARK+';font-weight:700}',
+    '.wfbtn-gold:hover{background:#FFD060;border-color:#FFD060;color:'+BLUE_DARK+'}',
     '#wfbar-strip{position:fixed;left:0;right:0;z-index:99997;height:'+STRIP_HEIGHT+'px;display:none;align-items:center;justify-content:center;gap:10px;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px;font-weight:500;border-bottom:1px solid transparent}',
     '#wfbar-strip.wf-strip-show{display:flex}',
     '#wfbar-strip-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}',
     '#wfbar-strip-msg{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;text-align:center}',
     '#wfbar-strip-close{background:none;border:none;cursor:pointer;font-size:16px;line-height:1;opacity:.5;padding:0 0 0 8px;flex-shrink:0;transition:opacity .15s;font-family:inherit}',
     '#wfbar-strip-close:hover{opacity:1}',
-
-    // Spacer
     '#wfbar-spacer{display:block}',
-
-    // Responsive
     '@media(max-width:800px){#wfbar-tag-wrap{display:none}#wfbar-user{display:none}#wfbar{padding:0 14px}}',
     '@media(max-width:480px){#wfbar-tag-full{display:none}#wfbar-tag-mobile{display:inline}}'
   ].join('');
@@ -134,7 +109,7 @@
     return '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>';
   }
 
-  // ── Auth ────────────────────────────────────────────────────
+  // ── Auth helpers ───────────────────────────────────────────
   function getSession() {
     try {
       var ref = SUPABASE_URL.split('//')[1].split('.')[0];
@@ -163,7 +138,7 @@
     });
   }
 
-  // ── Fetch notification config from Supabase ─────────────────
+  // ── Fetch notification config ──────────────────────────────
   function fetchConfig(callback) {
     fetch(SUPABASE_URL+'/rest/v1/network_config?select=key,value', {
       headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer '+SUPABASE_ANON_KEY }
@@ -171,15 +146,13 @@
     .then(function(r){ return r.ok ? r.json() : []; })
     .then(function(rows) {
       var cfg = {};
-      if (Array.isArray(rows)) {
-        rows.forEach(function(row){ cfg[row.key] = row.value; });
-      }
+      if (Array.isArray(rows)) rows.forEach(function(row){ cfg[row.key] = row.value; });
       callback(cfg);
     })
     .catch(function(){ callback({}); });
   }
 
-  // ── Build ───────────────────────────────────────────────────
+  // ── Build ──────────────────────────────────────────────────
   function build(cfg) {
     var st = document.createElement('style');
     st.textContent = css;
@@ -188,17 +161,14 @@
     var notifActive  = cfg['notification_active']  === 'true';
     var notifMessage = cfg['notification_message'] || '';
     var notifType    = cfg['notification_type']    || 'info';
-    var palette      = STRIP_PALETTES[notifType] || STRIP_PALETTES.info;
+    var palette      = STRIP_PALETTES[notifType]   || STRIP_PALETTES.info;
+    var totalOffset  = BAR_HEIGHT + (notifActive && notifMessage ? STRIP_HEIGHT : 0);
 
-    var totalOffset = BAR_HEIGHT + (notifActive && notifMessage ? STRIP_HEIGHT : 0);
-
-    // ── MAIN BAR ───────────────────────────────────────────────
-    var bar = document.createElement('div');
-    bar.id = 'wfbar';
+    // ── BAR ────────────────────────────────────────────────────
+    var bar = document.createElement('div'); bar.id = 'wfbar';
 
     // LEFT
-    var left = document.createElement('div');
-    left.id = 'wfbar-left';
+    var left = document.createElement('div'); left.id = 'wfbar-left';
 
     // Logo
     var lw = document.createElement('div'); lw.id = 'wfbar-logo-wrap';
@@ -215,14 +185,13 @@
 
     // Network dropdown
     var netWrap = document.createElement('div'); netWrap.id = 'wfbar-net';
-    var netBtn = document.createElement('button'); netBtn.id = 'wfbar-net-btn';
+    var netBtn  = document.createElement('button'); netBtn.id = 'wfbar-net-btn';
     netBtn.setAttribute('type','button');
     netBtn.setAttribute('aria-haspopup','true');
     netBtn.setAttribute('aria-expanded','false');
     netBtn.innerHTML = svgGlobe()+'<span>Network</span>'+svgChevron();
 
     var dd = document.createElement('div'); dd.id = 'wfbar-dd';
-
     var ddHdr = document.createElement('div'); ddHdr.id = 'wfbar-dd-hdr';
     ddHdr.innerHTML = '<span>Wee Fowk Network</span>';
     dd.appendChild(ddHdr);
@@ -231,13 +200,11 @@
       var host = s.url.replace(/https?:\/\//,'').split('/')[0];
       var isCurrent = (CURRENT_DOMAIN === host || CURRENT_DOMAIN === 'www.'+host);
       var row = document.createElement(s.comingSoon ? 'span' : 'a');
-      if (!s.comingSoon) { row.href = s.url; }
+      if (!s.comingSoon) row.href = s.url;
       row.className = 'wfdd-row'+(isCurrent?' wf-cur':'')+(s.comingSoon?' wf-soon':'');
-
       var iconEl = document.createElement('div'); iconEl.className = 'wfdd-icon'; iconEl.textContent = s.icon;
       var textEl = document.createElement('div'); textEl.className = 'wfdd-text';
       textEl.innerHTML = '<span class="wfdd-name">'+s.name+'</span><span class="wfdd-desc">'+s.description+'</span>';
-
       row.appendChild(iconEl); row.appendChild(textEl);
       if (s.comingSoon) {
         var badge = document.createElement('span'); badge.className = 'wfdd-soon-tag'; badge.textContent = 'Soon';
@@ -246,16 +213,13 @@
       dd.appendChild(row);
     });
 
-    // Dropdown toggle – mousedown to beat React's synthetic click
+    // Dropdown – mousedown beats React synthetic events
     netBtn.addEventListener('mousedown', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
+      e.preventDefault(); e.stopPropagation();
       var isOpen = dd.classList.contains('wf-open');
       dd.classList.toggle('wf-open', !isOpen);
       netBtn.setAttribute('aria-expanded', String(!isOpen));
     });
-
-    // Close on outside mousedown (capture phase)
     document.addEventListener('mousedown', function(e) {
       if (!netWrap.contains(e.target)) {
         dd.classList.remove('wf-open');
@@ -280,49 +244,39 @@
     // Auth state
     var user = getSession();
     if (user) {
-      var m = user.user_metadata||{};
+      var m    = user.user_metadata || {};
       var name = m.first_name || user.email.split('@')[0];
-      var ud = document.createElement('div'); ud.id = 'wfbar-user';
+      var ud   = document.createElement('div'); ud.id = 'wfbar-user';
       ud.innerHTML = 'Hi, <span>'+name+'</span>';
       var soBtn = document.createElement('button'); soBtn.className = 'wfbtn';
       soBtn.setAttribute('type','button'); soBtn.textContent = 'Sign out';
       soBtn.addEventListener('click', signOut);
-      right.appendChild(ud); right.appendChild(soBtn);
+      right.appendChild(ud);
+      right.appendChild(soBtn);
     } else {
-      var si = document.createElement('a'); si.className = 'wfbtn';
-      si.textContent = 'Sign in / Join'; si.href = 'https://votewiser.scot/dashboard';
+      // ── FIX: single gold button, appended to right ──
+      var si = document.createElement('a');
+      si.className = 'wfbtn wfbtn-gold';
+      si.textContent = 'Sign in / Join';
+      si.href = 'https://votewiser.scot/dashboard';
+      right.appendChild(si); // ← this line was missing in the previous version
     }
 
     bar.appendChild(left); bar.appendChild(right);
 
     // ── NOTIFICATION STRIP (below bar) ────────────────────────
     var strip = document.createElement('div'); strip.id = 'wfbar-strip';
-    strip.style.cssText = [
-      'top:'+BAR_HEIGHT+'px',
-      'background:'+palette.bg,
-      'color:'+palette.text,
-      'border-bottom-color:'+palette.border
-    ].join(';');
-
-    var dot = document.createElement('span'); dot.id = 'wfbar-strip-dot';
-    dot.style.background = palette.dot;
-    var msg = document.createElement('span'); msg.id = 'wfbar-strip-msg';
-    msg.textContent = notifMessage;
+    strip.style.cssText = 'top:'+BAR_HEIGHT+'px;background:'+palette.bg+';color:'+palette.text+';border-bottom-color:'+palette.border;
+    var dot      = document.createElement('span'); dot.id = 'wfbar-strip-dot'; dot.style.background = palette.dot;
+    var msg      = document.createElement('span'); msg.id = 'wfbar-strip-msg'; msg.textContent = notifMessage;
     var closeBtn = document.createElement('button'); closeBtn.id = 'wfbar-strip-close';
-    closeBtn.setAttribute('type','button'); closeBtn.innerHTML = '&times;';
-    closeBtn.style.color = palette.text;
+    closeBtn.setAttribute('type','button'); closeBtn.innerHTML = '&times;'; closeBtn.style.color = palette.text;
     closeBtn.addEventListener('click', function() {
-      strip.classList.remove('wf-strip-show');
-      strip.style.display = 'none';
-      spacer.style.height = BAR_HEIGHT+'px';
-      bellBadge.classList.remove('wf-show');
+      strip.classList.remove('wf-strip-show'); strip.style.display = 'none';
+      spacer.style.height = BAR_HEIGHT+'px'; bellBadge.classList.remove('wf-show');
     });
-
     strip.appendChild(dot); strip.appendChild(msg); strip.appendChild(closeBtn);
-
-    if (notifActive && notifMessage) {
-      strip.classList.add('wf-strip-show');
-    }
+    if (notifActive && notifMessage) strip.classList.add('wf-strip-show');
 
     // ── SPACER ─────────────────────────────────────────────────
     var spacer = document.createElement('div'); spacer.id = 'wfbar-spacer';
@@ -335,10 +289,8 @@
     document.body.insertBefore(bar,    first);
   }
 
-  // ── Init ────────────────────────────────────────────────────
-  function init() {
-    fetchConfig(function(cfg) { build(cfg); });
-  }
+  // ── Init ───────────────────────────────────────────────────
+  function init() { fetchConfig(function(cfg) { build(cfg); }); }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
