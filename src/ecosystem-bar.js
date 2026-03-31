@@ -290,10 +290,7 @@
       right.appendChild(ud); right.appendChild(soBtn);
     } else {
       var si = document.createElement('a'); si.className = 'wfbtn';
-      si.textContent = 'Sign in'; si.href = 'https://weefowk.org/signin';
-      var join = document.createElement('a'); join.className = 'wfbtn wfbtn-join';
-      join.textContent = 'Join'; join.href = 'https://weefowk.org/#join';
-      right.appendChild(si); right.appendChild(join);
+      si.textContent = 'Sign in / Join'; si.href = 'https://votewiser.scot/dashboard';
     }
 
     bar.appendChild(left); bar.appendChild(right);
